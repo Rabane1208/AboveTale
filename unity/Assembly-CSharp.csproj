@@ -58,6 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Objects\Cameras\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Objects\Cameras\CameraModel.cs" />
     <Compile Include="Assets\Scripts\Objects\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Objects\Player\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\Objects\Player\PlayerView.cs" />

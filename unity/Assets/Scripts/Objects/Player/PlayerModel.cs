@@ -2,10 +2,13 @@
 {
     public class PlayerModel
     {
-        private float movespeed = 5f;
-        private float rotateSpeed = 5f;
+        public float MoveSpeed { get; private set; }
+        public float RotateSpeed { get; private set; }
 
-        public float MoveSpeed { get { return movespeed; } }
-        public float RotateSpeed { get { return rotateSpeed; } }
+        public PlayerModel(float moveSpeed, float rotateSpeed)
+        {
+            MoveSpeed = moveSpeed;
+            RotateSpeed = rotateSpeed;
+        }
     }
 }

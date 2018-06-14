@@ -10,18 +10,22 @@ namespace AT.Object
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private float moveSpeed = 5;
+        [SerializeField] private float rotateSpeed = 5;
+
         private PlayerView View { get { return GetComponent<PlayerView>(); } }
         private Rigidbody Rigid { get { return GetComponent<Rigidbody>(); } }
-
-        private PlayerModel model = new PlayerModel();
+        private PlayerModel Model { get; set; }
 
         void Start()
         {
-            InitMove();
+            Model = new PlayerModel(moveSpeed, rotateSpeed);
+
+            InitMove(Model);
         }
 
         // TODO: 移動クラスを作ろうかな
-        private void InitMove()
+        private void InitMove(PlayerModel model)
         {
             View.OnDir.Where(dir => dir != Vector3.zero)
                 .Subscribe(dir =>
